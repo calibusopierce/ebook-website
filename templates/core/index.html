@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title> Welcome to PCC </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{%static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+
+  <link href="{%static 'css/style.css'%}" rel="stylesheet">
+
+</head>
+
+<body>
+  <header id="header">
+    <div class="container-fluid">
+      <div class="logo">
+        <h1><a href="/">Home</a></h1>
+      </div><br>
+      <p style="color:white","text-transform:uppercase">Hello, {{user.username}}</p>
+
+      <button type="button" class="nav-toggle"><i class="bx bx-menu"></i></button>
+      <nav class="nav-menu">
+        <ul>
+          <li class="active"><a href="#header" class="scrollto">Home</a></li>
+          {% if user.is_authenticated %}
+          <li class="active"><a href="{% url 'user_logout'%}" class="scrollto">Logout</a></li>
+          <li class="active"><a href="{% url 'books'%}" class="scrollto">Books</a></li>
+          <li class="active"><a href="{% url 'users'%}" class="scrollto">Users</a></li>
+          {% else %}
+          <li class="active"><a href="{% url 'user_login'%}" class="scrollto">Login</a></li>
+          <li class="active"><a href="{% url 'user_register'%}" class="scrollto">Register</a></li>
+          {% endif %}
+          <li class="drop-down"><a href="">Book Genres</a>
+            <ul>
+              <li><a href="#">Classics</a></li>
+              <li><a href="#">Romance</a></li>
+              <li><a href="#">Action and Adventure</a></li>
+              <li><a href="#">Horror</a></li>
+              <li><a href="#">Mystery</a></li>
+              <li><a href="#">Manga</a></li>
+              <li><a href="#">Tutorials</a></li>
+              <li class="drop-down"><a href="#">Fiction</a>
+                <ul>
+                  <li><a href="#">Historical Fiction</a></li>
+                  <li><a href="#">Literary Fiction</a></li>
+                  <li><a href="#">Science Fiction (Sci-fi)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#about" class="scrollto">About Us</a></li>
+          <li><a href="#contact" class="scrollto">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Welcome to PCC</h1>
+      <h2>We save the best E-Books for you.</h2>
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="about" class="about"><h2 style="text-align:center">About Us</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{%static 'img/e-book.gif'%}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h3> What is PCC? </h3>
+            <p class="fst-italic">
+              This website isn't particularly attractive or polished, it can feature a selection of publications ranging from Historical books to Fictional novels.
+            </p>
+            <ul>
+              <li><i class="bx bx-check-double"></i> A website that connects authors and readers to the world of legal free ebooks.</li>
+              <li><i class="bx bx-check-double"></i> The community of readers will benefit authors with their ebooks. </li>
+              <li><i class="bx bx-check-double"></i> PCC is free and open-source that offers different genres of E-book materials. </li>
+            </ul>
+            <p>To access this site's library, you'll need to make an account, but it's free, 
+              and once you do, you'll be able to read as many e-books, periodicals, 
+              and published studies as you like.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+ 
+    <section class="faq">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Frequenty Asked Questions</h2>
+        </div>
+
+        <ul class="faq-list">
+
+          <li>
+            <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">Is account Registration free? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                To access the books you should register. Don't worry because the registration is easy and free.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">How can I read books? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Our site contains only links, the link will redirect you to your chosen e-book.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">Can I download books directly from PCC? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                No. Because all of our links are redirected to another site where you can read the book. 
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">Will there be more books in this website? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Yes, I will add more books in the future.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Who is PCC? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                PCC is short for Pierce Crisver Calibuso the creator of the website.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">Is there any copyright violation for listing books in this website? <i class="bx bx-down-arrow-alt icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                No copyright violation is within this website. All book listed here are just links.
+                This site is a directory of Hyperlinks to other webpages, free ebooks all over the world. 
+                It is basically a free service to the communities. 
+                In other words, this site DOES NOT contain any actual content of the books listed in this site.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact Us</h2>
+        </div>
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-3 col-md-5 mb-5 mb-md-0">
+            <div class="info">
+              <div class="address">
+                <i class="bx bx-map"></i>
+                <p>Barangay 9, Pantoc Reyes Subd. <br>Lucena City, Quezon 4301</p>
+              </div>
+
+              <div class="email">
+                <i class="bx bx-envelope"></i>
+                <p>calibusopierce@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bx bx-phone-call"></i>
+                <p>+63 9085325395</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://github.com/calibusopierce" class="Github"><i class="bx G">Git</i></a>
+              <a href="https://www.facebook.com/piercecalibuso16" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/firstcalibuso/" class="instagram"><i class="bx bxl-instagram"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 col-md-7">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Pierce Calibuso</span></strong>. All Rights Reserved 2022
+      </div>
+      <div class="credits">
+        <a>Designed by Pierce Crisver Calibuso</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{%static 'vendor/php-email-form/validate.js'%}"></script>
+
+  <script src="{%static 'js/main.js'%}"></script>
+
+</body>
+
+</html>

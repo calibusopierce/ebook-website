@@ -1,0 +1,60 @@
+body {
+    background: url("../img/hero-bg.jpg");
+    font-family: "Raleway", sans-serif;
+    color: #444444;
+}
+
+.regform {
+    text-align: center;
+    margin:auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px;
+    border: 3px solid #000 ;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+    box-shadow: 5px 10px 10px rgba(greenSeaweed, 0.2);
+}
+
+.reguser{
+    padding: 10px;
+}
+
+.firstname{
+    padding: 10px;
+}
+
+.lastname{
+    padding: 10px;
+}
+
+.regemail{
+    padding: 10px;
+}
+
+.regpass{
+    padding: 10px;
+}
+
+.regconfirm{
+  padding: 10px;
+}
+
+.submit{
+    padding: 10px 20px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: rgb(224, 153, 0);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+}
+
+
+
+
